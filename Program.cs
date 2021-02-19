@@ -10,6 +10,9 @@ namespace TS_Aula1
     {
         static void Main(string[] args)
         {
+            const string texto = "Como é?";
+            Console.WriteLine( texto + " Olá Mundo!");
+            Console.ReadLine();
 
         }
     }
