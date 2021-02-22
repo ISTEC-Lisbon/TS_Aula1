@@ -52,12 +52,10 @@ namespace TS_Aula1
 
                 #region CAR RACE
 
-                Viatura myCar = new Viatura("Seat", "Ibiza"); //default constructor
-                myCar.Velocidade = 188;
+                Viatura myCar = new Viatura("Seat", "Ibiza") {Velocidade = 188}; //default constructor
                 myCar.Acelerar();
-                
-                Viatura myCar2 = new Viatura("Toyota", "Land Cruiser"); //default constructor
-                myCar2.Velocidade = 210;
+
+                Viatura myCar2 = new Viatura("Toyota", "Land Cruiser") {Velocidade = 210}; //default constructor
                 myCar2.Acelerar();
 
                 //Viatura myCar = new Viatura(); //constructor overload

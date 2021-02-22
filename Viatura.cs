@@ -19,8 +19,10 @@ namespace TS_Aula1
         //Campos := Variáveis declaradas ao nível da classe
         public String marca;
         private String _modelo = "Modelo Não Definido"; //o underscore é usado para as var privadas
-        protected int _velocidade;
-        protected int _acelerador;
+        private int _velocidade;
+
+        private static Random _rnd = new Random(); //Fixed by Ivo Protásio (@ivoprotasioAltyra)
+
 
 
         //Properties
@@ -42,8 +44,7 @@ namespace TS_Aula1
 
         public void Acelerar()
         {
-            Random rnd = new Random();
-            int n = rnd.Next(0, 201);
+            int n = _rnd.Next(0, 201);
             // Can return 0,..., 200
             this._velocidade = n;
         }
@@ -53,7 +54,7 @@ namespace TS_Aula1
             //Console.WriteLine("Marca: {0}", marca);
             Console.WriteLine("\n--------------(" + this.marca + ")--------------");
             Console.WriteLine("Modelo: {0}", _modelo);
-            Console.WriteLine("Velocidade:" + this.Velocidade.ToString());
+            Console.WriteLine("Velocidade:" + this._velocidade.ToString());
         }
 
 
