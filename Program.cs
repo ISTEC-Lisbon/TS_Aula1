@@ -54,10 +54,16 @@ namespace TS_Aula1
 
                 Viatura myCar = new Viatura("Seat", "Ibiza"); //default constructor
                 myCar.Velocidade = 188;
+                myCar.Acelerar();
+                
+                Viatura myCar2 = new Viatura("Toyota", "Land Cruiser"); //default constructor
+                myCar2.Velocidade = 210;
+                myCar2.Acelerar();
 
                 //Viatura myCar = new Viatura(); //constructor overload
 
                 myCar.Ver();
+                myCar2.Ver();
 
                 #endregion
 

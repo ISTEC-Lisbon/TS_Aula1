@@ -20,6 +20,8 @@ namespace TS_Aula1
         public String marca;
         private String _modelo = "Modelo Não Definido"; //o underscore é usado para as var privadas
         protected int _velocidade;
+        protected int _acelerador;
+
 
         //Properties
         public String Modelo
@@ -38,13 +40,22 @@ namespace TS_Aula1
             }
         }
 
+        public void Acelerar()
+        {
+            Random rnd = new Random();
+            int n = rnd.Next(0, 201);
+            // Can return 0,..., 200
+            this._velocidade = n;
+        }
+
         public void Ver()
-        {            
+        {
             //Console.WriteLine("Marca: {0}", marca);
-            Console.WriteLine("\n--------------(" + this.marca + ")--------------"); 
+            Console.WriteLine("\n--------------(" + this.marca + ")--------------");
             Console.WriteLine("Modelo: {0}", _modelo);
             Console.WriteLine("Velocidade:" + this.Velocidade.ToString());
         }
+
 
         //Construtor
         public Viatura() //exemplo overload
