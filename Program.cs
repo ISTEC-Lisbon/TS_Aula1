@@ -52,16 +52,28 @@ namespace TS_Aula1
 
                 #region CAR RACE
 
-                Viatura myCar = new Viatura("Seat", "Ibiza") {Velocidade = 188}; //default constructor
-                myCar.Acelerar();
+                Carro myCar = new Carro("Seat", "Ibiza") {Velocidade = 188}; //default constructor
+               
 
-                Viatura myCar2 = new Viatura("Toyota", "Land Cruiser") {Velocidade = 210}; //default constructor
-                myCar2.Acelerar();
+                Carro myCar2 = new Carro("Toyota", "Land Cruiser") {Velocidade = 210}; //default constructor
 
                 //Viatura myCar = new Viatura(); //constructor overload
 
                 myCar.Ver();
                 myCar2.Ver();
+
+                for (int i = 0; i < 3; i++)
+                {
+                    myCar.Acelerar();
+                    myCar2.Acelerar();
+
+                }
+
+                //Morte dos carros
+                myCar = null;
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                Console.WriteLine("\nTudo Limpo!");
 
                 #endregion
 
@@ -73,7 +85,7 @@ namespace TS_Aula1
             }
             finally
             {
-                Console.WriteLine("Acabou!");
+                Console.WriteLine("\nOOOH! WHAT A RACE!");
                 Console.ReadLine();
             }
 
