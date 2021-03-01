@@ -121,11 +121,11 @@ namespace TS_Aula1
 
         public Carro(String marca, String modelo) : base(marca, modelo)
         {
-
+            _distancia += Velocidade;
         }
         public Carro(String marca, String modelo, int velocidade) : base(marca, modelo, velocidade)
         {
-
+            _distancia += velocidade;
         }
 
         public string Marca => throw new NotImplementedException();

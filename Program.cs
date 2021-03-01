@@ -22,6 +22,7 @@ namespace TS_Aula1
             #endregion
 
 
+
             try
             {
                 #region INTRODUÇÃO
@@ -52,28 +53,43 @@ namespace TS_Aula1
 
                 #region CAR RACE
 
-                Carro myCar = new Carro("Seat", "Ibiza") {Velocidade = 188}; //default constructor
-               
+                Carro[] carros = new Carro[]
+                {
+                    new Carro("Seat", "Ibiza"),
+                    new Carro("Toyota", "Land Cruiser"),
+                    new Carro(marca:"Toyota", modelo:"Yaris")
+                };
 
-                Carro myCar2 = new Carro("Toyota", "Land Cruiser") {Velocidade = 210}; //default constructor
+                //Carro myCar = new Carro("Seat", "Ibiza") { Velocidade = 188 }; //default constructor
+
+
+                //Carro myCar2 = new Carro("Toyota", "Land Cruiser") { Velocidade = 210 }; //default constructor
 
                 //Viatura myCar = new Viatura(); //constructor overload
 
-                myCar.Ver();
-                myCar2.Ver();
+                //myCar.Ver();
+                //myCar2.Ver();
 
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < carros.Length; i++)
                 {
-                    myCar.Acelerar();
-                    myCar2.Acelerar();
-
+                    carros[i].Acelerar();
+                    System.Threading.Thread.Sleep(2000); //pausa 2segundos
                 }
 
+                Carro vencedor = carros[0];
+                foreach (Carro p in carros)
+                {
+                    vencedor = (p.Distancia > vencedor.Distancia) ? p : vencedor;
+                }
+
+                Console.WriteLine("\nVencedor:");
+                vencedor.Ver();
+
                 //Morte dos carros
-                myCar = null;
-                GC.Collect();
-                GC.WaitForPendingFinalizers();
-                Console.WriteLine("\nTudo Limpo!");
+                //myCar = null;
+                //GC.Collect();
+                //GC.WaitForPendingFinalizers();
+                //Console.WriteLine("\nTudo Limpo!");
 
                 #endregion
 
